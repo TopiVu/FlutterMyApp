@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/components/home.dart';
+import 'package:my_app/components/Accounts/account.dart';
+import 'package:my_app/components/Books/books.dart';
+import 'package:my_app/components/Home/home.dart';
 import 'package:my_app/login.dart';
+
 void main() => runApp(MyApp());
+
 class MainPage extends StatelessWidget {
   static const String _title = 'Flutter Code Sample';
 
@@ -25,17 +29,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  List<Widget> _widgetOptions = <Widget>[
-   HomePage(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-  ];
+  List<Widget> _widgetOptions = <Widget>[HomePage(), BookPage(), AccountPage()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -46,9 +40,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -59,16 +50,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Business'),
+            icon: Icon(Icons.book_sharp),
+            title: Text('Books'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            title: Text('School'),
+            icon: Icon(Icons.account_box),
+            title: Text('Account'),
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Color(0xff01A0C7),
         onTap: _onItemTapped,
       ),
     );
