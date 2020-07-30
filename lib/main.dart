@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/components/Accounts/account.dart';
 import 'package:my_app/components/Books/books.dart';
@@ -43,25 +44,50 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book_sharp),
-            title: Text('Books'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_box),
-            title: Text('Account'),
-          ),
+      bottomNavigationBar: CurvedNavigationBar(
+        color: Color(0xff01A0C7),
+        backgroundColor: Colors.white,
+        items: <Widget>[
+          Icon(Icons.home, size: 30),
+          Icon(Icons.book_sharp, size: 30),
+          Icon(Icons.account_box, size: 30),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xff01A0C7),
         onTap: _onItemTapped,
       ),
+      //   bottomNavigationBar: BottomNavigationBar(
+      //     items: const <BottomNavigationBarItem>[
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.home),
+      //         title: Text('Home'),
+      //       ),
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.book_sharp),
+      //         title: Text('Books'),
+      //       ),
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.account_box),
+      //         title: Text('Account'),
+      //       ),
+      //     ],
+      //     currentIndex: _selectedIndex,
+      //     selectedItemColor: Color(0xff01A0C7),
+      //     onTap: _onItemTapped,
+      //   ),
+      // );
     );
   }
 }
+// Scaffold(
+//   bottomNavigationBar: CurvedNavigationBar(
+//     backgroundColor: Colors.blueAccent,
+//     items: <Widget>[
+//       Icon(Icons.add, size: 30),
+//       Icon(Icons.list, size: 30),
+//       Icon(Icons.compare_arrows, size: 30),
+//     ],
+//     onTap: (index) {
+//       //Handle button tap
+//     },
+//   ),
+//   body: Container(color: Colors.blueAccent),
+// )

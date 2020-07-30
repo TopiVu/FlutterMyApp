@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_app/components/Books/components/all.books.dart';
+import 'package:my_app/components/Books/components/install.books.dart';
 
 class BookPage extends StatelessWidget {
   @override
@@ -24,7 +25,7 @@ class BookPage extends StatelessWidget {
             children: [
               AllBooksComponent(),
               Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
+              InstallComponents()
             ],
           ),
         ),
